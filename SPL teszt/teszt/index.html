@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="Hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="script.js"></script>
+    
+</head>
+<body>
+    <form action="php.php" method="GET">
+        <table>
+            <tr>
+                <th><input type="text" id="searchInput1" name="input1" onkeyup="searchCountries()"></th>
+                <th>-</th>
+                <th><input type="text" id="searchInput2" name="input2" onkeyup="searchCountries()"></th>
+            </tr>
+        </table>
+        <button type="submit" id="button">Keresés</button>
+    </form>
+
+    <div id="box">
+        
+    </div>
+</body>
+</html>
