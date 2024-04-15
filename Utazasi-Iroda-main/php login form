@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<?php
+session_start();
+
+// Check if user is already logged in, if yes, redirect to dashboard
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    header('Location: dashboard.php');
+    exit;
+}
+
+// Define username and password
+$username = 'username';
+$password = 'password';
+
+// Check if form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Validate input
+    $input_username = $_POST['username'];
+    $input_password = $_POST['password'];
+
+    if ($input_username === $username && $input_password === $password) {
+        // Success, set session variables and redirect to dashboard
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+        header('Location: dashboard.php');
+        exit;
+    } else {
+        $error = "Invalid username or password";
+    }
+}
+?>
+
+<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Login">
+</form>
+
+<?php
+if (isset($error)) {
+    echo "<p style='color:red;'>$error</p>";
+}
+?>
+
+</body>
+</html>
