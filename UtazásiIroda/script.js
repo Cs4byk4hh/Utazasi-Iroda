@@ -1,29 +1,38 @@
-function from_country_search() {
-    let input = document.getElementById('from_searchbar').value
-    input = input.toLowerCase();
-    let x = document.getElementsByClassName('from_countries');
-   
-    for (i = 0; i < x.length; i++) {
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-        x[i].style.display = "none";
-      }
-      else {
-        x[i].style.display = "list-item";
-      }
-    }
-};
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function to_country_search() {
-    let input = document.getElementById('to_searchbar').value
-    input = input.toLowerCase();
-    let x = document.getElementsByClassName('to_countries');
-   
-    for (i = 0; i < x.length; i++) {
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-        x[i].style.display = "none";
-      }
-      else {
-        x[i].style.display = "list-item";
-      }
-    }
-};
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1
+   }    
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+const box = document.getElementById('travel-box');
+
+document.getElementById('button').
+addEventListener('click', () => {
+  box.style.display = 'flex';
+});
