@@ -1,0 +1,8 @@
+SQL
+reglog:
+tb_user:
+-id AI
+-name Var 50
+-username Var25
+-email Var50
+-password Var75
