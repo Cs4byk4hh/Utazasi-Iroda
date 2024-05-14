@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ország és főváros keresése</title>
+</head>
+<body>
+    <h2>Ország és főváros keresése</h2>
+    <!--
+    <form action="php.php" method="post">
+        <label for="orszag1">Első ország:</label>
+        <input type="text" id="orszag1" name="orszag[]" required>
+        <label for="orszag2">Második ország:</label>
+        <input type="text" id="orszag2" name="orszag[]" required>
+        <button type="submit">Keresés</button>
+    </form>
+    -->
+    <form action="php.php" method="post">
+        <label for="orszag1">Első ország:</label>
+        <input type="text" id="orszag1" name="orszag[0]" required>
+        <label for="orszag2">Második ország:</label>
+        <input type="text" id="orszag2" name="orszag[1]" required>
+        <button type="submit" name="submit">Keresés</button>
+    </form>
+    
+</body>
+</html>
