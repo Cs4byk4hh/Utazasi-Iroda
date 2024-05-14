@@ -1,0 +1,490 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+:root {
+    --violet: #7B1FA2;
+    --lightpurple: #e0d0ff;
+    --white: #ffffff;
+    --aqua: #5CFFFF;
+    --darkblue: #154c79;
+    --black: #000;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    max-height: 100vh;
+    font-family: 'PT Sans';
+}
+#cssmenu {
+  background: var(--darkblue);
+  margin: 0;
+  width: auto;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  position: relative;
+  font-family: 'PT Sans', sans-serif;
+}
+#cssmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+#cssmenu ul:after,
+#cssmenu:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#cssmenu ul li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: relative;
+}
+#cssmenu ul li a {
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu ul li ul {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+}
+#cssmenu ul li ul li {
+  max-height: 0;
+  position: absolute;
+  -webkit-transition: max-height 0.4s ease-out;
+  -moz-transition: max-height 0.4s ease-out;
+  -ms-transition: max-height 0.4s ease-out;
+  -o-transition: max-height 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
+  background: #ffffff;
+}
+
+#cssmenu ul li ul li:hover > a,
+#cssmenu ul li ul li.active > a {
+  color: #4cb6ea;
+}
+#cssmenu ul li ul li:hover:after,
+#cssmenu ul li ul li.active:after {
+  background: #4cb6ea;
+}
+#cssmenu ul li ul li:hover > ul {
+  left: 100%;
+  top: 0;
+}
+#cssmenu ul li ul li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul > li {
+  float: none;
+  display: inline-block;
+}
+#cssmenu.align-center > ul {
+  text-align: center;
+}
+#cssmenu.align-center ul ul {
+  text-align: left;
+}
+#cssmenu.align-right > ul {
+  float: right;
+}
+#cssmenu.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+}
+#cssmenu.align-right ul ul li:hover > ul {
+  right: 100%;
+  left: auto;
+}
+#cssmenu.align-right ul ul li a {
+  text-align: right;
+}
+#cssmenu > ul > li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  z-index: 0;
+  background: #ffffff;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
+}
+#cssmenu > ul > li.has-sub > a {
+  padding-right: 40px;
+}
+#cssmenu > ul > li > a {
+  color: #ffffff;
+  padding: 15px 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  z-index: 2;
+  position: relative;
+}
+#cssmenu > ul > li:hover:after,
+#cssmenu > ul > li.active:after {
+  height: 100%;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li.active > a {
+  color: #000000;
+}
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li.active > a:after {
+  background: #000000;
+}
+#cssmenu > ul > li:hover > a:before,
+#cssmenu > ul > li.active > a:before {
+  border-top-color: #ffffff;
+}
+#cssmenu > ul > li:hover > ul {
+  left: 0;
+}
+#cssmenu > ul > li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+#cssmenu #menu-button {
+  display: none;
+}
+#cssmenu > ul > li > a {
+  display: block;
+}
+#cssmenu > ul > li {
+  width: auto;
+}
+#cssmenu > ul > li > ul {
+  width: 170px;
+  display: block;
+}
+#cssmenu > ul > li > ul > li {
+  width: 170px;
+  display: block;
+}
+.slideshow{
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.myslides {
+  display: flex;
+  position: absolute;
+}
+img {
+  vertical-align: middle;
+}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  opacity: .6;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  width: auto;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  opacity: 1;
+  transition: 0.4s all ease-in;
+}
+  
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+      opacity: .4;
+  } 
+  to {
+      opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next    {
+      font-size: 11px
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.content {
+  align-self: center;
+}
+.content fieldset {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px var(--white),
+              0 0 15px var(--white),
+              0 0 25px var(--white),
+              0 0 45px var(--white);
+  width: auto;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(0.2rem);
+  -webkit-backdrop-filter: blur(0.2rem);
+}
+.content fieldset h2 {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.7rem;
+  color: var(--white);
+  -webkit-text-stroke: 1px var(--darkblue);
+}
+.content fieldset label {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.content fieldset h1 {
+  text-align: center;
+}
+.content fieldset label > input {
+  border: none;
+  width: 350px;
+  background-color: transparent;
+  font-style: italic;
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--white);
+  color: var(--darkblue);
+}
+.content fieldset label > input::placeholder {
+  color: var(--black);
+}
+.content fieldset label > input:focus {
+  outline: none;
+}
+form fieldset .center {
+  display: flex;
+  justify-content: center;
+}
+form fieldset .center > button {
+  margin-top: 0.4vw;
+  border: 2px solid var(--darkblue);
+  background-color: var(--darkblue);
+  color: var(--white);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+form fieldset .center > button::before {
+  content: '';
+  z-index: 1;
+  position: relative;
+  top: 5px;
+  bottom: 0;
+  left: 0;
+  padding-right: 10px;
+  color: var(--white);
+  display: inline-flex;
+  width: 100px;
+}
+form fieldset .center > button::after {
+  content: '';
+  z-index: 0;
+  position: relative;
+  top: 5px;
+  padding-left: 10px;
+  right: 0;
+  bottom: 0;
+  display: inline-flex;
+  width: 100px;
+}
+form fieldset label button img {
+  width: 10px;
+}
+form fieldset .flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.6rem;
+}
+form fieldset .flex-container .left > img,
+form fieldset .flex-container .center > img,
+form fieldset .flex-container .right > img {
+  width: 40px;
+}
+form fieldset p:first-of-type {
+  color: var(--darkblue);
+  text-align: center;
+  font-style: italic;
+}
+form fieldset p:last-of-type {
+  text-align: center;
+  font-style: italic;
+  color: var(--fekete);
+  font-size: 1.2rem;
+}
+form fieldset a {
+  text-decoration: none;
+  color: var(--sotetkek);
+}
+/*
+.travelling-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: auto;
+  backdrop-filter: blur(0.45rem);
+  -webkit-backdrop-filter: blur(0.45rem);
+}
+.travelling-object {
+  align-self: center;
+}
+.travelling-object table tr th input {
+  width: auto;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+.travelling-object table tr > th > input::placeholder {
+  color: var(--black);
+}
+.travelling-object table tr > th > input:focus {
+  outline: none;
+}
+.travelling-object  #travelling-box {
+  border: 2px solid black;
+  margin-top: 20px;
+  display: none;
+  width: 450px;
+  height: 200px;
+}
+.travelling-object > h4 {
+  text-align: center;
+}
+.travelling-object > .date {
+  display: flex;
+  justify-content: space-evenly;
+}
+*/
+footer {
+    height: 150px;
+    display: grid;
+    margin-top: 3vw;
+}
+footer .left {
+    grid-column: 1 / 2;
+    grid-row: 1 / 1;
+    width: auto;
+    color: var(--white);
+    background: var(--darkblue);
+    color: light;
+    padding: 1rem;
+}
+footer .right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+    width: auto;
+    background-color: var(--lightpurple);
+    color: var(--violet);
+    padding: 1rem;
+}
+footer .right .flex-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+}
+footer .right .flex-container p > a > img {
+    width: 105px;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    footer .left {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+    }
+    footer .right {
+        grid-row: 2 / 2;
+        grid-column: 1 / 1;
+    }
+    .content fieldset {
+      height: 450px;
+    }
+}
+@media (max-width: 600px) {
+  footer .left {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+  footer .right {
+      grid-row: 2 / 2;
+      grid-column: 1 / 1;
+  }
+  .content fieldset {
+    height: auto;
+  }
+}
+@media (max-width: 992px) {
+  footer .left {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+  footer .right {
+      grid-row: 2 / 2;
+      grid-column: 1 / 1;
+  }
+  .content fieldset {
+    height: 400px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .content fieldset {
+    height: 450px;
+  }
+}
