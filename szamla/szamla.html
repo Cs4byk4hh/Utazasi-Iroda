@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="Hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Számla</title>
+</head>
+<body>
+    <main>
+        <h1>Számla</h1>
+        <img src="logo.png" alt="">
+        <br>
+        <div class="text">
+            <h2>Utazási iroda</h2>
+            <p>Utazási iroda kelt: 2024.05.31.</p>
+            <br>
+            <p><b>Honnan:</b> <input  type="text" id="valasztottOrszag1" name="valasztottOrszag1[0]" required><b>Hova:</b> <input  type="text" id="valasztottOrszag1" name="valasztottOrszag1[0]" required></p>
+            <p><b>Típus:</b> Repülő</p>
+            <label for="date"><b>Időpont:</b></label>
+            <input type="date" min="2024-05-31" max="2099-12-31"></p>
+            <p><b>Számlázás helyszíne:</b> Sárospatak Zrínyi út 38</p>
+            <hr>
+            <div class="pay">
+                <article>
+                    <p><b>Ár:</b> 69000Ft</p>
+                    <label for="szamlasazm"><b>Számlaszám:</b></label>
+                    <input type="text" id="szamlasazm" placeholder="1177 3058 0568 9984">
+                    <br>
+                    <label for="username"><b>Vezetéknév:</b></label>
+                    <input type="text" id="username" minlength="5" maxlength="35" placeholder="Ide írja be a vezetéknevét..." size="25" spellcheck="true" value="" required>
+                    <br>
+                    <label for="username"><b>Keresztnév:</b></label>
+                    <input type="text" id="username" minlength="5" maxlength="35" placeholder="Ide írja be a keresztnevét..." size="25" spellcheck="true" value="" required>
+                    <br>
+                    <label for="birthdaydate"><b>Születésév:</b></label>
+                    <input type="date" min="1900-01-31" max="2099-12-31">
+                    
+                </article>
+                <aside>
+                    <h3>Lakcím:</h3>
+                    <label for="postcode">Irányítószám:</label>
+                    <input type="text" id="postcode" minlength="4" maxlength="4" size="4" placeholder="1234">
+                    <br>
+                    <label for="city">Város:</label>
+                    <input type="text" id="city" placeholder="Sárospatak">
+                    <br>
+                    <label for="publicplace">Közterület neve:</label>
+                    <input type="text" id="publicplace" placeholder="Műfház">
+                    <br>
+                    <label for="housenumber">Házszám:</label>
+                    <input type="number" id="housenumber" min="1" max="999" placeholder="38">
+                    <input type="">
+                </aside>
+            </div>
+            <div class="buttons">
+                <button name="vissza">Vissza</button>
+                <button name="Vásárlás">Vásárlás</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
