@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logo.png">
+    <title>Számla</title>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Ország 1 és repülőtér 1 értékek beállítása
+            const orszag1 = urlParams.get('orszag1');
+            const repter1 = urlParams.get('repter1');
+            if (orszag1 && repter1) {
+                document.getElementById('valasztottOrszag1').value = orszag1;
+                document.getElementById('valasztottRepter1').value = repter1;
+            }
+
+            // Ország 2 és repülőtér 2 értékek beállítása
+            const orszag2 = urlParams.get('orszag2');
+            const repter2 = urlParams.get('repter2');
+            if (orszag2 && repter2) {
+                document.getElementById('valasztottOrszag2').value = orszag2;
+                document.getElementById('valasztottRepter2').value = repter2;
+            }
+        }
+    </script>
+    <style>
+        body{
+            background-color: rgb(212, 210, 210);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        h1{
+            text-align: center;
+        }
+        main{
+            margin: 5rem;
+            border: 2px solid black;
+            background-color: white;
+            margin-left: 15rem;
+            margin-right: 15rem;
+            padding: 1rem;
+            font-size: 15pt;
+        }
+        .buttons{
+            margin-left: 62rem;
+        }
+        button{
+            height: 30px;
+            width: 70px;
+        }
+        img{
+            float: right;
+            margin-right: 5rem;
+            transform: rotate(15deg);
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+        }
+        hr{
+            height: 0.3rem;
+            background-color: black;
+        }
+        .pay{
+            display: grid;
+        }
+        article{
+            grid-column: 1 / 2;
+            grid-row: 2 / 2;
+        }
+        aside{
+            grid-column: 2 / 2;
+            grid-row: 2 / 2;
+        }
+            </style>
+</head>
+<body>
+    <main>
+        <h1>Számla</h1>
+        <img src="logo.png" alt="">
+        <br>
+        <div class="text">
+            <h2>Utazási iroda</h2>
+            <p>Utazási iroda kelt: 2024.05.31.</p>
+            <br>
+            <p>
+                <b>Honnan:</b> <input type="text" id="valasztottOrszag1" name="valasztottOrszag1" required>
+                <b>Repülőtér:</b> <input type="text" id="valasztottRepter1" name="valasztottRepter1" required>
+            </p>
+            <p>
+                <b>Hova:</b> <input type="text" id="valasztottOrszag2" name="valasztottOrszag2" required>
+                <b>Repülőtér:</b> <input type="text" id="valasztottRepter2" name="valasztottRepter2" required>
+            </p>
+            <p><b>Típus:</b> Repülő</p>
+            <label for="date"><b>Időpont:</b></label>
+            <input type="date" min="2024-05-31" max="2099-12-31">
+            <p><b>Számlázás helyszíne:</b> Sárospatak Zrínyi út 38</p>
+            <hr>
+            <div class="pay">
+                <article>
+                    <p><b>Ár:</b> 69000Ft</p>
+                    <label for="szamlasazm"><b>Számlaszám:</b></label>
+                    <input type="text" id="szamlasazm" placeholder="1177 3058 0568 9984">
+                    <br>
+                    <label for="username"><b>Vezetéknév:</b></label>
+                    <input type="text" id="username" minlength="5" maxlength="35" placeholder="Ide írja be a vezetéknevét..." size="25" spellcheck="true" value="" required>
+                    <br>
+                    <label for="username"><b>Keresztnév:</b></label>
+                    <input type="text" id="username" minlength="5" maxlength="35" placeholder="Ide írja be a keresztnevét..." size="25" spellcheck="true" value="" required>
+                    <br>
+                    <label for="birthdaydate"><b>Születésév:</b></label>
+                    <input type="date" min="1900-01-31" max="2099-12-31">
+                </article>
+                <aside>
+                    <h3>Adatok</h3>
+                    <h3>Lakcím:</h3>
+                    <label for="postcode">Irányítószám:</label>
+                    <input type="text" id="postcode" minlength="4" maxlength="4" size="4" placeholder="1234">
+                    <br>
+                    <label for="city">Város:</label>
+                    <input type="text" id="city" placeholder="Sárospatak">
+                    <br>
+                    <label for="publicplace">Közterület neve:</label>
+                    <input type="text" id="publicplace" placeholder="Műfház">
+                    <br>
+                    <label for="housenumber">Házszám:</label>
+                    <input type="number" id="housenumber" min="1" max="999" placeholder="38">
+                    <input type="">
+                    <p>A honlapunkon való fizetés során megadott adatokat bizalmasan kezeljük, és nem osztjuk meg harmadik felekkel.</p>
+                </aside>
+            </div>
+            <div class="buttons">
+                <button name="vissza">Vissza</button>
+                <button name="Vásárlás">Vásárlás</button>
+            </div>
+        </div>
+    </main>
+
+    
+</body>
+</html>

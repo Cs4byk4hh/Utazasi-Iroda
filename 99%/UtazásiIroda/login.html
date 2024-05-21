@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="Images/logo.png">
+    <style>
+        body {
+            background-image: url(./Images/loginregisterbg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id='cssmenu'>
+            <ul>
+                <li><a href='index.html'><span>Főoldal</span></a></li>
+                <li><a href="tervezes.html"><span>Útvonal Tervezés</span></a>
+                <li><a href='login.html'><span>Bejelentkezés</span></a></li>
+                <li class='last'><a href='regisztracio.html'><span>Regisztráció</span></a></li>
+            </ul>
+        </header>
+        
+        <main>
+            <div class="box">
+                <div class="content">
+                    <form action="login.php" method="post">
+                        <fieldset>
+                            <h2>Jelentkezz be!</h2>
+                            <label for="usernameemail">
+                                <input name="usernameemail" id="usernameemail" type="text" placeholder="Felhasználónév.." required>
+                            </label>
+                            <label for="password">
+                                <input name="password" id="password" type="password" placeholder="Jelszó..." required>
+                            </label>
+                            <div class="center">
+                                <button name="submit" type="submit">Bejelentkezés</button>
+                            </div>
+                            <p>Még nincs fiokód? <a href="regisztracio.html">Regisztráció</a></p>
+                            <p>Már van fiókja?</p>
+                            <div class="flex-container">
+                                <div class="left">
+                                    <img src="Images/facebook (1).svg" alt="">
+                                </div>
+                                <div class="center">
+                                    <img src="Images/insta.svg" alt="">
+                                </div>
+                                <div class="right">
+                                    <img src="Images/google.svg" alt="">
+                                </div>
+                            </div>       
+                        </fieldset>
+                    </form>
+                </div>
+            </div>        
+        </main>
+
+        <footer>
+            <div class="left">
+                <p>&copy;Minden jog fenntartva 2024</p>
+                <p>Weboldalt készítette: Albók Csaba, Hegedüs Ákos, SImkó Roland</p>
+                <p>Személyes elérhetőségeink</p>
+                <ul>
+                    <li>albok.csaba.2021@osztalyterem.katolikuskeri.hu</li>
+                    <li>hegedus.akos.2021@osztalyterem.katolikuskeri.hu</li>
+                    <li>simko.roland.2021@osztalyterem.katolikuskeri.hu</li>
+                </ul>
+           </div>
+           <div class="right">
+            <div class="flex-container">
+                <p><a href="https://www.google.com/search?sca_esv=78d3e0b7da712cbc&sxsrf=ACQVn08AkpI9Wx3IHDd-IdzkiMf7KceT2Q:1712070656059&q=instagram&uds=AMwkrPuhn_F0WDJCwQwE6XxpOj7ekvVz8-CsFAtKOUwjEJi4X_VMVdrWYTxwN_fYnYbnx5_Pjenyfnbdc2pk8oaiCA-mgsMR757Hpuy9WkOYJm7Fil8O2TiZTowYVub4XfNGRCY0QZkJ6PLl3t89Ccw-ArSltjHdbLOpYpZVlAVvm-nFPoQVUtY4MPtuSCD5LgcYQT5-zJKiIvZkL60h68RgyiazCdwaBO5hm48JcV-3RWvP2nz53Ij5B17ysdovX-Mr9m5Qp1V8&udm=2&prmd=invbz&sa=X&sqi=2&ved=2ahUKEwihnaOa6KOFAxWsIBAIHQ73CpQQtKgLegQIDhAB&biw=1536&bih=738&dpr=1.25#vhid=vDxmQJXFChdErM&vssid=mosaic"><img src="Images/insta.svg"></a></p>
+                <p><a href="#"><img src="Images/facebook (1).svg"></a></p>
+                <p><a href="#"><img src="Images/twitter.svg"></a></p>
+                <p><a href="#"><img src="Images/ViscaBarca.svg"></a></p>
+            </div>
+           </div>
+        </footer>
+</body>
+</html>
