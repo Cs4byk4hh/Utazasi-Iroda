@@ -1,0 +1,32 @@
+/* Általános táblázat stílus */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Ország oszlop stílus */
+  td.orszag {
+    background-color: #f2f2f2;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Repter oszlop stílus */
+  td.repter {
+    background-color: #e6e6e6;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Gomb stílus */
+  button.select-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.select-button:hover {
+    background-color: #45a049;
+  }
