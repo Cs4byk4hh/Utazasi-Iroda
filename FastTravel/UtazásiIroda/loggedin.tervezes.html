@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ország és főváros keresése</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/logo.png">
+</head>
+<body>
+    <header>
+        <div id='cssmenu'>
+            <ul>
+                <li><a href='loggedinindex.html'><span>Főoldal</span></a></li>
+                <li><a href="loggedin.tervezes.html"><span>Útvonal Tervezés</span></a>
+                <li><a href="index.html">Kijelentkezés</a></li>
+            </ul>
+        </header>
+    
+        <main class="countries">
+            <div class="search">
+                <h2>Ország és főváros keresése</h2>
+                <form action="countries.php" method="post">
+                    <label for="orszag1">Honnan:</label>
+                    <input type="text" placeholder="Hungary..." id="orszag1" name="orszag[0]" required>
+                    <br>
+                    <label for="orszag2">Hova:</label>
+                    <input type="text" placeholder="Germany..." id="orszag2" name="orszag[1]" required>
+                    <br>
+                    <div class="button">
+                    <button type="submit" name="submit">Keresés</button>
+                    </div>
+                </form>    
+            </div>
+        </main>
+        <footer>
+            <div class="left">
+                <p>&copy;Minden jog fenntartva 2024</p>
+                <p>Weboldalt készítette: Albók Csaba, Hegedüs Ákos, SImkó Roland</p>
+                <p>Személyes elérhetőségeink</p>
+                <ul>
+                    <li>albok.csaba.2021@osztalyterem.katolikuskeri.hu</li>
+                    <li>hegedus.akos.2021@osztalyterem.katolikuskeri.hu</li>
+                    <li>simko.roland.2021@osztalyterem.katolikuskeri.hu</li>
+                </ul>
+           </div>
+           <div class="right">
+            <div class="flex-container">
+                <p><a href="https://www.google.com/search?sca_esv=78d3e0b7da712cbc&sxsrf=ACQVn08AkpI9Wx3IHDd-IdzkiMf7KceT2Q:1712070656059&q=instagram&uds=AMwkrPuhn_F0WDJCwQwE6XxpOj7ekvVz8-CsFAtKOUwjEJi4X_VMVdrWYTxwN_fYnYbnx5_Pjenyfnbdc2pk8oaiCA-mgsMR757Hpuy9WkOYJm7Fil8O2TiZTowYVub4XfNGRCY0QZkJ6PLl3t89Ccw-ArSltjHdbLOpYpZVlAVvm-nFPoQVUtY4MPtuSCD5LgcYQT5-zJKiIvZkL60h68RgyiazCdwaBO5hm48JcV-3RWvP2nz53Ij5B17ysdovX-Mr9m5Qp1V8&udm=2&prmd=invbz&sa=X&sqi=2&ved=2ahUKEwihnaOa6KOFAxWsIBAIHQ73CpQQtKgLegQIDhAB&biw=1536&bih=738&dpr=1.25#vhid=vDxmQJXFChdErM&vssid=mosaic"><img src="Images/insta.svg"></a></p>
+                <p><a href="#"><img src="Images/facebook (1).svg"></a></p>
+                <p><a href="#"><img src="Images/icons8-twitterx (1).svg"></a></p>
+                <p><a href="#"><img src="Images/ViscaBarca.svg"></a></p>
+            </div>
+           </div>
+        </footer>
+    <script>
+        function searchCountries() {
+            var input1 = document.getElementById("searchInput1").value;
+            var input2 = document.getElementById("searchInput2").value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("box").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "php.php?input1=" + input1 + "&input2=" + input2, true);
+            xhttp.send();
+        };
+    </script>
+</body>
+</html>
