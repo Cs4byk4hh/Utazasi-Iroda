@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/logo.png">
+    <title>Számla</title>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            max-height: 100vh;
+            font-family: 'PT Sans';
+        }
+        h1{
+            text-align: center;
+        }
+        .paremt {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+        .child {
+            align-self: center;
+            padding: 1rem;
+        }
+        .buttons{
+           display: flex;
+           justify-content: center;
+        }
+        .buttons > button {
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+        .buttons > button:first-child{
+            border: 1px solid red;
+            background-color: red;
+            border-radius: 1rem;
+        }
+        .buttons > button:first-child > a {
+            text-decoration: none;
+            color: white;
+        }
+        .buttons > button:last-child {
+            border: 1px solid green;
+            background-color: green;
+            color: white;
+            border-radius: 1rem;
+        }
+        img{
+            float: right;
+            margin: 1rem;
+            transform: rotate(15deg);
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+        }
+        hr{
+            height: 0.3rem;
+            background-color: black;
+        }
+        .pay{
+            display: flex;
+            flex-direction: column;
+        }
+        @media (max-width: 600px) {
+            img {
+                display: none;
+            }
+        }
+         </style>
+</head>
+<body>
+    <main>
+        <div class="prent">
+            <div class="child">
+                <h1>Számla</h1>
+                <img src="Images/logo.png">
+                <br>
+                <div class="text">
+                    <h2>Utazási iroda</h2>
+                    <p>Utazási iroda kelt: 2024.05.31.</p>
+                    <br>
+                        <b>Honnan:</b> <input type="text" id="valasztottOrszag1" name="valasztottOrszag1" required>
+                        <br>
+                        <b>Repülőtér:</b> <input type="text" id="valasztottRepter1" name="valasztottRepter1" required>
+                        <br>
+                        <b>Hova:</b> <input type="text" id="valasztottOrszag2" name="valasztottOrszag2" required>
+                        <br>
+                        <b>Repülőtér:</b> <input type="text" id="valasztottRepter2" name="valasztottRepter2" required>
+                        <br>
+                    <p><b>Típus:</b> Repülő</p>
+                    <label for="date"><b>Időpont:</b></label>
+                    <input type="date" min="2024-05-31" max="2099-12-31">
+                    <p><b>Számlázás helyszíne:</b> Sárospatak Zrínyi út 38</p>
+                    <hr>
+                    <div class="pay">
+                        <article>
+                            <p><b>Ár:</b> 69000Ft</p>
+                            <label for="szamlasazm"><b>Számlaszám:</b></label>
+                            <input type="text" id="szamlasazm" placeholder="1177 3058 0568 9984">
+                            <br>
+                            <label for="username"><b>Vezetéknév:</b></label>
+                            <input type="text" id="username" minlength="5" maxlength="35" placeholder="Ide írja be a vezetéknevét..." size="25" spellcheck="true" value="" required>
+                            <br>
+                            <label for="username"><b>Keresztnév:</b></label>
+                            <input type="text" id="username" minlength="5" maxlength="35" placeholder="Ide írja be a keresztnevét..." size="25" spellcheck="true" value="" required>
+                            <br>
+                            <label for="birthdaydate"><b>Születésév:</b></label>
+                            <input type="date" min="1900-01-31" max="2099-12-31">
+                        </article>
+                        <aside>
+                            <h3>Adatok</h3>
+                            <h3>Lakcím:</h3>
+                            <label for="postcode">Irányítószám:</label>
+                            <input type="text" id="postcode" minlength="4" maxlength="4" size="4" placeholder="1234">
+                            <br>
+                            <label for="city">Város:</label>
+                            <input type="text" id="city" placeholder="Sárospatak">
+                            <br>
+                            <label for="publicplace">Közterület neve:</label>
+                            <input type="text" id="publicplace" placeholder="Műfház">
+                            <br>
+                            <label for="housenumber">Házszám:</label>
+                            <input type="number" id="housenumber" min="1" max="999" placeholder="38">
+                            <input type="">
+                            <p>A honlapunkon való fizetés során megadott adatokat bizalmasan kezeljük, és nem osztjuk meg harmadik felekkel.</p>
+                        </aside>
+                    </div>
+                    <div class="buttons">
+                        <button name="vissza"><a href="tervezes.html">Vissza</a></button>
+                        <button name="Vásárlás" id="button">Vásárlás</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+         window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const orszag1 = urlParams.get('orszag1');
+            const repter1 = urlParams.get('repter1');
+            if (orszag1 && repter1) {
+                document.getElementById('valasztottOrszag1').value = orszag1;
+                document.getElementById('valasztottRepter1').value = repter1;
+            }
+
+            const orszag2 = urlParams.get('orszag2');
+            const repter2 = urlParams.get('repter2');
+            if (orszag2 && repter2) {
+                document.getElementById('valasztottOrszag2').value = orszag2;
+                document.getElementById('valasztottRepter2').value = repter2;
+            }
+        };
+
+        document.getElementById('button').
+        addEventListener('click', () => {
+            alert('Sikeres vásárlás! Kellemes utazást kíván a Fast Travel csapata!');
+        })
+    </script>
+    
+</body>
+</html>
